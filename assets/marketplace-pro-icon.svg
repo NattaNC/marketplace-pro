@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Marketplace Pro">
+  <rect x="0" y="0" width="256" height="256" rx="54" fill="#102A43"/>
+  <rect x="49" y="79" width="158" height="135" rx="22" fill="#FFFFFF"/>
+  <path d="M83 79C83 45 173 45 173 79" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round"/>
+  <path d="M74 147L111 184L184 108" fill="none" stroke="#16847C" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

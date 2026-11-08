@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "marketplace-pro",
+  "version": "1.2.0-beta.1",
+  "description": "Agente em português para criar, auditar e otimizar anúncios de marketplaces, com foco no Mercado Livre: SEO, títulos, descrições, fotos comerciais fiéis ao produto e análise de concorrência.",
+  "license": "MIT",
+  "keywords": [
+    "mercado-livre",
+    "marketplace",
+    "seo",
+    "copywriting",
+    "fotografia-de-produto",
+    "ecommerce"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Marketplace Pro",
+        "shortDescription": "SEO, textos e imagens para anúncios de marketplaces",
+        "longDescription": "Audite ou crie anúncios para Mercado Livre com pesquisa verificável, título relevante, atributos completos, descrição honesta e orientação de fotografia realista, sem inventar características do produto.",
+        "defaultPrompt": [
+          "Otimize meu anúncio do Mercado Livre a partir deste link.",
+          "Crie título, descrição e plano de fotos para este produto.",
+          "Audite as imagens deste anúncio e sugira melhorias.",
+          "Use /cleanflyer com esta foto do produto sem texto.",
+          "Use /herooffer-minimal para criar um banner com benefícios verificados em português.",
+          "Use /auto-gallery para planejar seis fotos fiéis de um produto com base nas imagens anexadas.",
+          "Use /pixel-lock, /quality-check e /marketplace-pro para criar peças com fidelidade à foto original."
+        ],
+        "logo": "./assets/marketplace-pro-icon.svg",
+        "composerIcon": "./assets/marketplace-pro-icon.svg"
+      }
+    }
+  }
+}

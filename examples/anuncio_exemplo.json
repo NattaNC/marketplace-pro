@@ -1,0 +1,19 @@
+{
+  "title": "Headset Exemplo H1 com Fio Preto",
+  "brand": "Exemplo",
+  "model": "H1",
+  "description": "Headset com fio da marca fictícia Exemplo, modelo H1, na cor preta. Este é apenas um anúncio de demonstração para testar o validador; não corresponde a um produto real anunciado.",
+  "attributes": {
+    "cor": "preto",
+    "conexao": "com fio"
+  },
+  "images": [
+    {
+      "role": "cover",
+      "width": 1200,
+      "height": 1200,
+      "contains_overlay": false,
+      "ai_generated": false
+    }
+  ]
+}

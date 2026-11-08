@@ -1,0 +1,731 @@
+{
+  "schema_version": "1.0",
+  "version": "1.2.0-beta.1",
+  "notes": "Aliases textuais interpretados por LLM; não são slash commands nativos, nem ferramentas executáveis por si só.",
+  "commands": [
+    {
+      "command": "/pixel-lock",
+      "category": "Proteção do produto",
+      "kind": "modifier",
+      "description": "Priorizar preservação dos pixels originais do produto, usando recorte e composição não destrutiva quando viável.",
+      "photo_required": true
+    },
+    {
+      "command": "/product-mask",
+      "category": "Proteção do produto",
+      "kind": "modifier",
+      "description": "Isolar a silhueta real do produto para editar somente fundo e entorno.",
+      "photo_required": true
+    },
+    {
+      "command": "/edge-clean",
+      "category": "Proteção do produto",
+      "kind": "modifier",
+      "description": "Corrigir halos e bordas do recorte sem apagar detalhes do produto.",
+      "photo_required": true
+    },
+    {
+      "command": "/detail-guard",
+      "category": "Proteção do produto",
+      "kind": "modifier",
+      "description": "Proteger costuras, botões, portas, conectores, etiquetas e demais detalhes visíveis.",
+      "photo_required": true
+    },
+    {
+      "command": "/color-lock",
+      "category": "Proteção do produto",
+      "kind": "modifier",
+      "description": "Preservar as cores reais do produto e de suas variações.",
+      "photo_required": true
+    },
+    {
+      "command": "/logo-lock",
+      "category": "Proteção do produto",
+      "kind": "modifier",
+      "description": "Preservar marcas, logotipos e inscrições do item e de sua embalagem.",
+      "photo_required": true
+    },
+    {
+      "command": "/texture-lock",
+      "category": "Proteção do produto",
+      "kind": "modifier",
+      "description": "Preservar a aparência original de material, trama, textura e acabamento.",
+      "photo_required": true
+    },
+    {
+      "command": "/geometry-lock",
+      "category": "Proteção do produto",
+      "kind": "modifier",
+      "description": "Preservar ângulo, forma, perspectiva e proporções do item.",
+      "photo_required": true
+    },
+    {
+      "command": "/resolution-safe",
+      "category": "Proteção do produto",
+      "kind": "modifier",
+      "description": "Evitar ampliação destrutiva, nitidez artificial e exportação com perda desnecessária.",
+      "photo_required": true
+    },
+    {
+      "command": "/source-compare",
+      "category": "Proteção do produto",
+      "kind": "modifier",
+      "description": "Comparar imagem final e foto de referência; sinalizar divergências visíveis.",
+      "photo_required": true
+    },
+    {
+      "command": "/background-remove",
+      "category": "Tratamento da foto",
+      "kind": "modifier",
+      "description": "Remover somente o fundo mantendo o produto intacto.",
+      "photo_required": true
+    },
+    {
+      "command": "/background-swap",
+      "category": "Tratamento da foto",
+      "kind": "modifier",
+      "description": "Trocar o cenário sem redesenhar o produto.",
+      "photo_required": true
+    },
+    {
+      "command": "/object-center",
+      "category": "Tratamento da foto",
+      "kind": "modifier",
+      "description": "Centralizar o recorte mantendo escala e proporções adequadas.",
+      "photo_required": true
+    },
+    {
+      "command": "/canvas-1200",
+      "category": "Tratamento da foto",
+      "kind": "modifier",
+      "description": "Preparar enquadramento quadrado com alvo de exportação de 1200×1200 pixels, sem esticar o item.",
+      "photo_required": true
+    },
+    {
+      "command": "/crop-safe",
+      "category": "Tratamento da foto",
+      "kind": "modifier",
+      "description": "Recortar com margens seguras, preservando todas as partes importantes.",
+      "photo_required": true
+    },
+    {
+      "command": "/margin-balance",
+      "category": "Tratamento da foto",
+      "kind": "modifier",
+      "description": "Equalizar espaços negativos e respiro visual.",
+      "photo_required": true
+    },
+    {
+      "command": "/exposure-safe",
+      "category": "Tratamento da foto",
+      "kind": "modifier",
+      "description": "Ajustar luz do cenário, evitando alterar indevidamente cores do item.",
+      "photo_required": true
+    },
+    {
+      "command": "/white-balance-safe",
+      "category": "Tratamento da foto",
+      "kind": "modifier",
+      "description": "Neutralizar o fundo sem mudar a cor real do produto.",
+      "photo_required": true
+    },
+    {
+      "command": "/shadow-match",
+      "category": "Tratamento da foto",
+      "kind": "modifier",
+      "description": "Criar sombra externa coerente com o recorte, apoio e direção de luz.",
+      "photo_required": true
+    },
+    {
+      "command": "/reflection-control",
+      "category": "Tratamento da foto",
+      "kind": "modifier",
+      "description": "Controlar reflexos do cenário sem reconstruir superfícies originais.",
+      "photo_required": true
+    },
+    {
+      "command": "/cleanflyer",
+      "category": "Estúdio e fotografia",
+      "kind": "visual",
+      "description": "Foto comercial limpa e sem nenhum texto, ícone ou selo.",
+      "photo_required": true,
+      "must_be_text_free": true
+    },
+    {
+      "command": "/catalog-white",
+      "category": "Estúdio e fotografia",
+      "kind": "visual",
+      "description": "Foto de catálogo com fundo branco puro e nenhum gráfico, sem objetos extras.",
+      "photo_required": true,
+      "must_be_text_free": true
+    },
+    {
+      "command": "/studio-soft",
+      "category": "Estúdio e fotografia",
+      "kind": "visual",
+      "description": "Cenário simples com luz suave e difusa.",
+      "photo_required": true
+    },
+    {
+      "command": "/studio-contrast",
+      "category": "Estúdio e fotografia",
+      "kind": "visual",
+      "description": "Estúdio com contraste controlado e sombras naturais.",
+      "photo_required": true
+    },
+    {
+      "command": "/tabletop-premium",
+      "category": "Estúdio e fotografia",
+      "kind": "visual",
+      "description": "Produto original sobre mesa ou superfície neutra, se a perspectiva permitir.",
+      "photo_required": true
+    },
+    {
+      "command": "/floatstudio",
+      "category": "Estúdio e fotografia",
+      "kind": "visual",
+      "description": "Composição de flutuação ilustrativa usando o recorte original e sombra plausível.",
+      "photo_required": true
+    },
+    {
+      "command": "/premium-podium",
+      "category": "Estúdio e fotografia",
+      "kind": "visual",
+      "description": "Produto sobre pedestal geométrico sem alterá-lo.",
+      "photo_required": true
+    },
+    {
+      "command": "/dark-premium",
+      "category": "Estúdio e fotografia",
+      "kind": "visual",
+      "description": "Cenário escuro e iluminação lateral coerente.",
+      "photo_required": true
+    },
+    {
+      "command": "/pastel-studio",
+      "category": "Estúdio e fotografia",
+      "kind": "visual",
+      "description": "Estúdio claro em tons pastel e aparência fotográfica.",
+      "photo_required": true
+    },
+    {
+      "command": "/macro-crop",
+      "category": "Estúdio e fotografia",
+      "kind": "visual",
+      "description": "Aproximar região já presente e nítida na foto, sem inventar macrodetalhes.",
+      "photo_required": true
+    },
+    {
+      "command": "/lifestyle-real",
+      "category": "Cenas e contexto",
+      "kind": "visual",
+      "description": "Inserir o produto recortado em contexto cotidiano plausível.",
+      "photo_required": true
+    },
+    {
+      "command": "/home-scene",
+      "category": "Cenas e contexto",
+      "kind": "visual",
+      "description": "Criar cenário doméstico sem modificar o item.",
+      "photo_required": true
+    },
+    {
+      "command": "/office-scene",
+      "category": "Cenas e contexto",
+      "kind": "visual",
+      "description": "Ambientar em escritório mantendo a fotografia original do item.",
+      "photo_required": true
+    },
+    {
+      "command": "/kitchen-scene",
+      "category": "Cenas e contexto",
+      "kind": "visual",
+      "description": "Ambientar em cozinha quando o uso e a escala permitirem.",
+      "photo_required": true
+    },
+    {
+      "command": "/bathroom-scene",
+      "category": "Cenas e contexto",
+      "kind": "visual",
+      "description": "Ambientar em banheiro para itens compatíveis.",
+      "photo_required": true
+    },
+    {
+      "command": "/outdoor-scene",
+      "category": "Cenas e contexto",
+      "kind": "visual",
+      "description": "Criar ambiente externo coerente com o produto.",
+      "photo_required": true
+    },
+    {
+      "command": "/natural-daylight",
+      "category": "Cenas e contexto",
+      "kind": "visual",
+      "description": "Simular luz natural no entorno, respeitando o recorte original.",
+      "photo_required": true
+    },
+    {
+      "command": "/flatlay",
+      "category": "Cenas e contexto",
+      "kind": "visual",
+      "description": "Compor vista superior somente se as fotos já sustentarem esse ângulo.",
+      "photo_required": true
+    },
+    {
+      "command": "/in-hand",
+      "category": "Cenas e contexto",
+      "kind": "visual",
+      "description": "Mostrar o produto na mão só se houver fotografia de referência e escala plausível; senão criar briefing.",
+      "photo_required": true
+    },
+    {
+      "command": "/reference-style",
+      "category": "Cenas e contexto",
+      "kind": "visual",
+      "description": "Adaptar estética de referência secundária sem copiar outro produto ou identidade protegida.",
+      "photo_required": true
+    },
+    {
+      "command": "/fashion-flatlay",
+      "category": "Estilos por categoria",
+      "kind": "visual",
+      "description": "Apresentar roupas em superfície plana quando o ângulo original permitir.",
+      "photo_required": true
+    },
+    {
+      "command": "/fashion-hanger",
+      "category": "Estilos por categoria",
+      "kind": "visual",
+      "description": "Apresentar roupa em cabide apenas quando houver imagem compatível com o caimento.",
+      "photo_required": true
+    },
+    {
+      "command": "/shoe-studio",
+      "category": "Estilos por categoria",
+      "kind": "visual",
+      "description": "Foto de calçados com ênfase em forma e acabamento reais.",
+      "photo_required": true
+    },
+    {
+      "command": "/beauty-packshot",
+      "category": "Estilos por categoria",
+      "kind": "visual",
+      "description": "Compor foto de cosméticos e perfumes sem alterar embalagem ou rótulo.",
+      "photo_required": true
+    },
+    {
+      "command": "/food-packaging",
+      "category": "Estilos por categoria",
+      "kind": "visual",
+      "description": "Foto de alimento embalado mantendo rótulo, validade e embalagem originais.",
+      "photo_required": true
+    },
+    {
+      "command": "/furniture-context",
+      "category": "Estilos por categoria",
+      "kind": "visual",
+      "description": "Apresentar móveis em ambiente sem modificar medidas e perspectiva.",
+      "photo_required": true
+    },
+    {
+      "command": "/decor-lifestyle",
+      "category": "Estilos por categoria",
+      "kind": "visual",
+      "description": "Ambientar objetos decorativos com iluminação natural.",
+      "photo_required": true
+    },
+    {
+      "command": "/pet-products",
+      "category": "Estilos por categoria",
+      "kind": "visual",
+      "description": "Apresentação comercial de acessórios para pets, preservando fivelas e material.",
+      "photo_required": true
+    },
+    {
+      "command": "/toy-display",
+      "category": "Estilos por categoria",
+      "kind": "visual",
+      "description": "Apresentação fiel de brinquedos e seu conteúdo real.",
+      "photo_required": true
+    },
+    {
+      "command": "/jewelry-macro",
+      "category": "Estilos por categoria",
+      "kind": "visual",
+      "description": "Enquadrar detalhes visíveis de joias sem inventar pedras ou lapidação.",
+      "photo_required": true
+    },
+    {
+      "command": "/herooffer-minimal",
+      "category": "Banners e informação",
+      "kind": "visual",
+      "description": "Banner minimalista em pt-BR com headline, temas confirmados e ícones, nunca capa por padrão.",
+      "photo_required": true,
+      "verified_claims_required": true,
+      "for_cover_by_default": false
+    },
+    {
+      "command": "/feature-highlight",
+      "category": "Banners e informação",
+      "kind": "visual",
+      "description": "Destacar uma característica comprovada com indicador visual.",
+      "photo_required": true,
+      "verified_claims_required": true,
+      "for_cover_by_default": false
+    },
+    {
+      "command": "/benefits-trio",
+      "category": "Banners e informação",
+      "kind": "visual",
+      "description": "Organizar três benefícios comprovados em layout legível.",
+      "photo_required": true,
+      "verified_claims_required": true,
+      "for_cover_by_default": false
+    },
+    {
+      "command": "/spec-spotlight",
+      "category": "Banners e informação",
+      "kind": "visual",
+      "description": "Dar destaque a uma especificação técnica validada.",
+      "photo_required": true,
+      "verified_claims_required": true,
+      "for_cover_by_default": false
+    },
+    {
+      "command": "/dimensions-pro",
+      "category": "Banners e informação",
+      "kind": "visual",
+      "description": "Apresentar medidas reais com linhas e setas.",
+      "photo_required": true,
+      "verified_claims_required": true,
+      "for_cover_by_default": false
+    },
+    {
+      "command": "/compatibility-grid",
+      "category": "Banners e informação",
+      "kind": "visual",
+      "description": "Mostrar compatibilidades confirmadas em grade.",
+      "photo_required": true,
+      "verified_claims_required": true,
+      "for_cover_by_default": false
+    },
+    {
+      "command": "/kit-contents",
+      "category": "Banners e informação",
+      "kind": "visual",
+      "description": "Mostrar somente itens efetivamente inclusos no kit.",
+      "photo_required": true,
+      "verified_claims_required": true,
+      "for_cover_by_default": false
+    },
+    {
+      "command": "/size-guide",
+      "category": "Banners e informação",
+      "kind": "visual",
+      "description": "Diagrama de tamanhos baseado em medidas reais fornecidas.",
+      "photo_required": true,
+      "verified_claims_required": true,
+      "for_cover_by_default": false
+    },
+    {
+      "command": "/material-callout",
+      "category": "Banners e informação",
+      "kind": "visual",
+      "description": "Identificar materiais comprovados por indicadores discretos.",
+      "photo_required": true,
+      "verified_claims_required": true,
+      "for_cover_by_default": false
+    },
+    {
+      "command": "/usage-steps",
+      "category": "Banners e informação",
+      "kind": "visual",
+      "description": "Informar etapas de uso sustentadas por instruções verdadeiras.",
+      "photo_required": true,
+      "verified_claims_required": true,
+      "for_cover_by_default": false
+    },
+    {
+      "command": "/brand-kit",
+      "category": "Design e identidade",
+      "kind": "modifier",
+      "description": "Aplicar cores, tipografia, regras de espaçamento e ícones da loja.",
+      "photo_required": false
+    },
+    {
+      "command": "/brand-consistency",
+      "category": "Design e identidade",
+      "kind": "modifier",
+      "description": "Verificar consistência de identidade entre peças da galeria.",
+      "photo_required": false
+    },
+    {
+      "command": "/layout-left",
+      "category": "Design e identidade",
+      "kind": "modifier",
+      "description": "Distribuir produto à esquerda e texto à direita se permitido.",
+      "photo_required": true
+    },
+    {
+      "command": "/layout-right",
+      "category": "Design e identidade",
+      "kind": "modifier",
+      "description": "Distribuir produto à direita e texto à esquerda se permitido.",
+      "photo_required": true
+    },
+    {
+      "command": "/split-layout",
+      "category": "Design e identidade",
+      "kind": "modifier",
+      "description": "Separar composição em duas áreas equilibradas.",
+      "photo_required": true
+    },
+    {
+      "command": "/mobile-first",
+      "category": "Design e identidade",
+      "kind": "modifier",
+      "description": "Priorizar leitura em miniatura e reconhecimento do produto.",
+      "photo_required": false
+    },
+    {
+      "command": "/type-hierarchy",
+      "category": "Design e identidade",
+      "kind": "modifier",
+      "description": "Criar hierarquia de tipografia clara, sem texto pequeno.",
+      "photo_required": false
+    },
+    {
+      "command": "/icon-system",
+      "category": "Design e identidade",
+      "kind": "modifier",
+      "description": "Uniformizar estilo, peso e tamanho dos ícones.",
+      "photo_required": false
+    },
+    {
+      "command": "/no-text",
+      "category": "Design e identidade",
+      "kind": "modifier",
+      "description": "Proibir todo texto adicional, ícones, selo, watermark e elementos de marketing.",
+      "photo_required": false,
+      "must_be_text_free": true
+    },
+    {
+      "command": "/seasonal-style",
+      "category": "Design e identidade",
+      "kind": "modifier",
+      "description": "Aplicar estética sazonal sem preços, descontos ou escassez inventados.",
+      "photo_required": false
+    },
+    {
+      "command": "/marketplace-pro",
+      "category": "Galeria e automação",
+      "kind": "workflow",
+      "description": "Roteador universal que escolhe um fluxo apropriado a partir do produto e briefing.",
+      "photo_required": false
+    },
+    {
+      "command": "/auto-style",
+      "category": "Galeria e automação",
+      "kind": "workflow",
+      "description": "Escolher a direção estética mais apropriada para a categoria.",
+      "photo_required": false
+    },
+    {
+      "command": "/gallery-plan",
+      "category": "Galeria e automação",
+      "kind": "workflow",
+      "description": "Planejar a galeria por objetivos de comunicação e fontes disponíveis.",
+      "photo_required": false
+    },
+    {
+      "command": "/auto-gallery",
+      "category": "Galeria e automação",
+      "kind": "workflow",
+      "description": "Orquestrar produção de galeria baseada apenas em fotografias fornecidas.",
+      "photo_required": false
+    },
+    {
+      "command": "/gallery-order",
+      "category": "Galeria e automação",
+      "kind": "workflow",
+      "description": "Ordenar imagens por utilidade para o comprador e regras da plataforma.",
+      "photo_required": false
+    },
+    {
+      "command": "/gallery-variety",
+      "category": "Galeria e automação",
+      "kind": "workflow",
+      "description": "Reduzir repetição e aumentar diversidade de informações sem inventar ângulos.",
+      "photo_required": false
+    },
+    {
+      "command": "/image-set-from-sources",
+      "category": "Galeria e automação",
+      "kind": "workflow",
+      "description": "Aproveitar ângulos reais de múltiplas fotos anexadas.",
+      "photo_required": false
+    },
+    {
+      "command": "/variant-check",
+      "category": "Galeria e automação",
+      "kind": "workflow",
+      "description": "Conferir correspondência de cor, modelo, tamanho e versão.",
+      "photo_required": false
+    },
+    {
+      "command": "/gallery-audit",
+      "category": "Galeria e automação",
+      "kind": "workflow",
+      "description": "Inspecionar cobertura e conformidade do conjunto de imagens.",
+      "photo_required": false
+    },
+    {
+      "command": "/batch-apply",
+      "category": "Galeria e automação",
+      "kind": "workflow",
+      "description": "Aplicar padrão de composição a várias fotos sem misturar produtos.",
+      "photo_required": false
+    },
+    {
+      "command": "/seo-research",
+      "category": "SEO e copywriting",
+      "kind": "workflow",
+      "description": "Pesquisar buscas reais e termos relevantes apenas com fontes e ferramentas disponíveis.",
+      "photo_required": false
+    },
+    {
+      "command": "/keyword-map",
+      "category": "SEO e copywriting",
+      "kind": "workflow",
+      "description": "Organizar palavras-chave primárias, secundárias e atributos de compra.",
+      "photo_required": false
+    },
+    {
+      "command": "/title-pro",
+      "category": "SEO e copywriting",
+      "kind": "workflow",
+      "description": "Elaborar um título informativo, relevante e adequado à categoria.",
+      "photo_required": false
+    },
+    {
+      "command": "/title-variants",
+      "category": "SEO e copywriting",
+      "kind": "workflow",
+      "description": "Criar variantes de título e calcular caracteres.",
+      "photo_required": false
+    },
+    {
+      "command": "/attributes-fill",
+      "category": "SEO e copywriting",
+      "kind": "workflow",
+      "description": "Propor preenchimento de atributos com dados verificados.",
+      "photo_required": false
+    },
+    {
+      "command": "/description-pro",
+      "category": "SEO e copywriting",
+      "kind": "workflow",
+      "description": "Redigir descrição natural e completa sem promessas infundadas.",
+      "photo_required": false
+    },
+    {
+      "command": "/benefit-copy",
+      "category": "SEO e copywriting",
+      "kind": "workflow",
+      "description": "Traduzir atributos comprovados em benefícios claros para o comprador.",
+      "photo_required": false
+    },
+    {
+      "command": "/faq-builder",
+      "category": "SEO e copywriting",
+      "kind": "workflow",
+      "description": "Preparar FAQ útil sem inventar compatibilidades ou condições de venda.",
+      "photo_required": false
+    },
+    {
+      "command": "/competitor-audit",
+      "category": "SEO e copywriting",
+      "kind": "workflow",
+      "description": "Comparar anúncios públicos acessíveis com fontes e data.",
+      "photo_required": false
+    },
+    {
+      "command": "/listing-audit",
+      "category": "SEO e copywriting",
+      "kind": "workflow",
+      "description": "Auditar título, atributos, descrição, imagens e consistência da oferta.",
+      "photo_required": false
+    },
+    {
+      "command": "/quality-check",
+      "category": "Auditoria e entrega",
+      "kind": "workflow",
+      "description": "Avaliar nitidez, enquadramento, texto e artefatos visíveis usando capacidades existentes.",
+      "photo_required": false
+    },
+    {
+      "command": "/claims-check",
+      "category": "Auditoria e entrega",
+      "kind": "workflow",
+      "description": "Separar alegações comprovadas, fornecidas e pendentes.",
+      "photo_required": false,
+      "verified_claims_required": true
+    },
+    {
+      "command": "/typo-check",
+      "category": "Auditoria e entrega",
+      "kind": "workflow",
+      "description": "Conferir grafia de todos os textos renderizados.",
+      "photo_required": false
+    },
+    {
+      "command": "/product-match",
+      "category": "Auditoria e entrega",
+      "kind": "workflow",
+      "description": "Comparar produto final e original para identificar diferenças.",
+      "photo_required": false
+    },
+    {
+      "command": "/marketplace-rules",
+      "category": "Auditoria e entrega",
+      "kind": "workflow",
+      "description": "Consultar regras atuais da categoria e posição das imagens; caso contrário marcar não verificado.",
+      "photo_required": false
+    },
+    {
+      "command": "/risk-report",
+      "category": "Auditoria e entrega",
+      "kind": "workflow",
+      "description": "Relatar riscos de erro factual, edição enganosa ou conformidade.",
+      "photo_required": false
+    },
+    {
+      "command": "/visual-score",
+      "category": "Auditoria e entrega",
+      "kind": "workflow",
+      "description": "Produzir avaliação qualitativa, sem fingir métricas oficiais de conversão.",
+      "photo_required": false
+    },
+    {
+      "command": "/revision-only",
+      "category": "Auditoria e entrega",
+      "kind": "workflow",
+      "description": "Alterar apenas os elementos pedidos na revisão.",
+      "photo_required": false
+    },
+    {
+      "command": "/export-ready",
+      "category": "Auditoria e entrega",
+      "kind": "workflow",
+      "description": "Preparar exportação no tamanho possível, sem alegar pixel exato não verificado.",
+      "photo_required": false
+    },
+    {
+      "command": "/publish-pack",
+      "category": "Auditoria e entrega",
+      "kind": "workflow",
+      "description": "Organizar textos, imagens, evidências e checklist, sem publicar automaticamente.",
+      "photo_required": false
+    }
+  ]
+}
